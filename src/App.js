@@ -4,13 +4,23 @@ import Animals from './Animals';
 import Header from './Header';
 import Footer from './Footer';
 
+import Home from './Home';
+import About from './About';
+
+import { birds } from './Animalslist';
+import Birds from './Birds';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+
+import './App.css';
+
 
 
 class App extends Component {
 
   state = {
     animals: animals,
-    title: 'Living worlds',
+    // title: 'Living worlds',
+    birds: birds,
     searchInput: ''
   }
 
@@ -20,8 +30,16 @@ class App extends Component {
     this.setState({
       animals: updatedArray
     })
+  }
 
-    // console.log('remove handler', name)
+
+  removeHandler2 = (name) => {
+
+    const updatedArray = this.state.birds.filter(bird => bird.name !== name)
+    this.setState({
+      birds: updatedArray
+    })
+
   }
 
   likesHandler = (name, action) => {
@@ -47,8 +65,28 @@ class App extends Component {
 
   }
 
-  // console.log('likes handler', name, action)
+  likesHandler2 = (name, action) => {
+    this.setState((prevState) => {
+      const updatedArray = prevState.birds.map((bird) => {
+        if (bird.name === name) {
+          if (action === 'add') {
+            return { ...bird, likes: bird.likes + 1 }
+          }
+          else {
+            return { ...bird, likes: bird.likes - 1 }
+          }
+        }
+        else {
+          return bird
+        }
 
+      })
+      return {
+        birds: updatedArray
+      }
+    })
+
+  }
 
   searchHandler = (e) => {
     this.setState({
@@ -58,28 +96,69 @@ class App extends Component {
   }
 
 
-
   render() {
     return (
-      <div>
-        <Header title={this.state.title} />
-        <Animals
-          data={this.state.animals}
-          likesHandler={this.likesHandler}
-          removeHandler={this.removeHandler}
-          searchHandler={this.searchHandler}
-          searchInput={this.state.searchInput} />
-        <Footer />
-      </div>
+
+      <BrowserRouter>
+
+        <div className='app-container'>
+
+          <Header />
+
+          <Routes>
+
+            <Route path='/' element={<Home />} />
+
+            <Route path='/animals' element={<Animals
+              data={this.state.animals}
+              likesHandler={this.likesHandler}
+              removeHandler={this.removeHandler}
+              searchHandler={this.searchHandler}
+              searchInput={this.state.searchInput}
+
+            />} />
+
+            <Route path='/Animals' element={<Animals
+              data={this.state.animals}
+              likesHandler={this.likesHandler}
+              removeHandler={this.removeHandler}
+              searchHandler={this.searchHandler}
+              searchInput={this.state.searchInput}
+
+            />} />
+
+
+            <Route path='/birds' element={<Birds
+              data={this.state.birds}
+              likesHandler2={this.likesHandler2}
+              removeHandler2={this.removeHandler2}
+              searchHandler={this.searchHandler}
+              searchInput={this.state.searchInput}
+
+            />} />
+
+            <Route path='/Birds' element={<Birds
+              data={this.state.birds}
+              likesHandler2={this.likesHandler2}
+              removeHandler2={this.removeHandler2}
+              searchHandler={this.searchHandler}
+              searchInput={this.state.searchInput}
+
+            />} />
+
+            <Route path='about' element={<About />} />
+
+          </Routes>
+
+          <Footer />
+
+        </div>
+
+      </BrowserRouter>
     )
   }
 }
 
-
 export default App;
 
-{/* <div>
-{this.state.animals.map(animal => { return <li>{animal.name}, likes:{animal.likes}</li> })}
 
-
-</div> */}

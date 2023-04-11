@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import Search from './Search'
-import './Animals.css'
+import Search from './Search';
+import './Animals.css';
+
 
 
 const Animals = (props) => {
@@ -10,6 +11,7 @@ const Animals = (props) => {
     })
     return (
         <div>
+
             <h2>Animals {props.data.length}</h2>
             <Search searchHandler={props.searchHandler} />
             <div className='cards'>

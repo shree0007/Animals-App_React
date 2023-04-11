@@ -1,0 +1,35 @@
+.header {
+    background-color: #333;
+    padding: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.logo-and-heading {
+    display: flex;
+}
+
+.logo {
+    width: 130px;
+    height: 130px;
+    margin-right: 480px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-right: 320px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.nav a:hover {
+    color: orangered;
+}

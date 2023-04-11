@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+
+
+}
+
+.container img {
+    width: 420px;
+    height: 80%;
+    border: solid 2px white;
+}
+
+p {
+    color: white;
+}
