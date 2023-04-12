@@ -8,6 +8,7 @@ function Header(props) {
         <header className="header">
             <div className='logo-and-heading'>
                 <NavLink to="/"><img className='logo' src="./mylogo.png" alt="logo" /></NavLink>
+
                 <h1>Living Worlds</h1>
             </div>
 
@@ -15,8 +16,8 @@ function Header(props) {
 
 
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/animals">Animals{props.data1.length}</NavLink>
-                <NavLink to="/birds">Birds{props.data2.length}</NavLink>
+                <NavLink to="/animals">Animals({props.data1.length})</NavLink>
+                <NavLink to="/birds">Birds({props.data2.length})</NavLink>
                 <NavLink to="/about">About</NavLink>
 
                 {/* <a href="/">Home</a>

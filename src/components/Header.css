@@ -3,25 +3,28 @@
     padding: 20px;
     height: 60px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo-and-heading {
     display: flex;
+    align-items: center;
+
 }
 
 .logo {
     width: 130px;
     height: 130px;
-    margin-right: 480px;
+
 }
 
 h1 {
     color: white;
-    text-align: center;
-    margin-right: 320px;
+
 }
+
+
 
 .nav a {
     text-decoration: none;

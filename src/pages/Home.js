@@ -10,12 +10,12 @@ function Home() {
             <div className='container'>
                 <div className='animals'>
                     <p>Animals</p>
-                    <NavLink to="/Animals"><img src='animals.jpg' alt='animals' /></NavLink>
+                    <NavLink to="/animals"><img src='animals.jpg' alt='animals' /></NavLink>
                 </div>
 
                 <div className='pics/birds'>
                     <p>Birds</p>
-                    <NavLink to="/Birds"><img src='birds.jpg' alt='animals' /></NavLink>
+                    <NavLink to="/birds"><img src='birds.jpg' alt='animals' /></NavLink>
 
 
                 </div>
