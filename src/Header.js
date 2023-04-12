@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
     return (
 
         <header className="header">
@@ -15,8 +15,8 @@ function Header() {
 
 
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/animals">Animals</NavLink>
-                <NavLink to="/birds">Birds</NavLink>
+                <NavLink to="/animals">Animals{props.data1.length}</NavLink>
+                <NavLink to="/birds">Birds{props.data2.length}</NavLink>
                 <NavLink to="/about">About</NavLink>
 
                 {/* <a href="/">Home</a>

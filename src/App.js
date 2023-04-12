@@ -103,7 +103,7 @@ class App extends Component {
 
         <div className='app-container'>
 
-          <Header />
+          <Header data1={this.state.animals} data2={this.state.birds} />
 
           <Routes>
 
