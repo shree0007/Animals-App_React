@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { animals } from './Animalslist';
-import Animals from './Animals';
-import Header from './Header';
-import Footer from './Footer';
+import Animals from './pages/Animals';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import Home from './Home';
-import About from './About';
+import Home from './pages/Home';
+import About from './pages/About';
 
 import { birds } from './Animalslist';
-import Birds from './Birds';
+import Birds from './pages/Birds';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 
 import './App.css';
@@ -23,6 +23,20 @@ class App extends Component {
     birds: birds,
     searchInput: ''
   }
+
+
+  getLocalStorageData = () => {
+    const animalData = JSON.parse(localStorage.getItem('likes'));
+    const birdData = JSON.parse(localStorage.getItem('likes'));
+
+    // this.setState({
+    //   animals: animalData,
+    //   birds: birdData
+    // })
+
+  }
+
+
 
   removeHandler = (name) => {
 
@@ -58,9 +72,14 @@ class App extends Component {
         }
 
       })
+
+      localStorage.setItem('likes', JSON.stringify(updatedArray));
+
       return {
         animals: updatedArray
+
       }
+
     })
 
   }
@@ -81,9 +100,11 @@ class App extends Component {
         }
 
       })
+      localStorage.setItem('likes', JSON.stringify(updatedArray));
       return {
         birds: updatedArray
       }
+
     })
 
   }
