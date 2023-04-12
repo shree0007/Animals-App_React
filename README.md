@@ -1,18 +1,35 @@
 # Animals App
 
-This is a school task that contains list of animals and birds displayed in a card with <br>
+This app contains following features:
 
-* title
-* likes icon
-* count of likes
-* add and remove like buttons
-* remove card button
+- Usage of the class component (App.js)
+- React Router
+  - Links to Home, Animals, Birds, About
+- LocalStorage for storing likes
+- Proper readme file!
+- (optional) add animals or/and birds
 
--It also contains a search bar for filtering animal's and bird's array list.<br>
--Navigation to different components such as Animals, Birds, Home , and About is possible by clicking respective NavLink<br>
+- Navigation
+  - has amount of animals and birds
+  - marks active page
+- Home page
+  - have big image links to the Animals and Birds listings
+- Animals and birds pages
+  - from external array (animalsList.js)
+  - display image, name and likes
+  - add and remove likes (icon change on the negative likes)
+  - remove animal or bird
+  - search from animals and birds list
+  - back to top button
+- About page
+  - Text about this project and features
+
+  <br>
 
 ## Technologies used:<br>
 * Reactjs
 * HTML
 * JS
 * CSS
+
+
